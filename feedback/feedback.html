@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.container {
+  border-radius: 5px;
+  background-color: #d6e0f5;
+  padding: 30px;
+}
+
+.col25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  
+  font-size: x-large;
+}
+
+input[type=text], input[type=email], input[type=phone], 
+input[type=number], input[type=date], input[type=file],  select {
+  font-size: x-large;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.row:after {
+  
+  content: "";
+  display: table;
+  clear: both;
+}
+span {
+font-weight:bold;
+color:red;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #279f2b;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #4bf854;
+}
+
+input[type=reset] {
+  width: 100%;
+  background-color: #b31f1f;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: #bd3f3f;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1 align="center">Feedback Form</h1>
+<form action="http://localhost/feedback/feeedback.php" name="contact" method="post" >
+<div class="container">
+  <form action="process.php">
+  <fieldset> 
+ 		 <legend>Trainer Information </legend> 
+    <div class="row">
+      <div class="col25">
+        <label for="Trainerid">Trainer Id </label><span> * </span>
+      </div>
+      <div class="col75">
+        <input type="text" id="Tid" name="Tid" placeholder="Enter your id"; required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col25">
+        <label for="Email">Email </label><span> * </span>
+      </div>
+      <div class="col75">
+        <input type="email" id="Temail" name="Temail" placeholder="Enter email address" required>
+      </div>
+    </div>
+	
+	 <div class="row">
+      <div class="col25">
+        <label for="Designation">Trainer Designation</label>
+      </div>
+      <div class="col75">
+        <select id="Designation" name="Designation">
+		  <option value="0">D1</option>
+          <option value="1">D2</option>
+          <option value="2">D3</option>
+        </select>
+      </div>
+    </div>
+	</fieldset>
+
+    <fieldset> 
+        <legend>Trainee Information </legend> 
+  <div class="row">
+    <div class="col25">
+      <label for="traineeid">Trainee Id </label><span> * </span>
+    </div>
+    <div class="col75">
+      <input type="text" id="id" name="id" placeholder="Enter your id" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col25">
+      <label for="Email">Email </label><span> * </span>
+    </div>
+    <div class="col75">
+      <input type="email" id="email" name="email" placeholder="Enter email address" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col25">
+      <label for="date">Start Date </label><span> * </span>
+    </div>
+    <div class="col75">
+      <input type="date" id="date" name="date" required>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col25">
+      <label for="telephone">Telephone </label>
+    </div>
+    <div class="col75">
+      <input type="phone" id="phone" name="phone" placeholder="99999-99999" required>
+    </div>
+  </div>
+  </fieldset>
+
+	<fieldset> 
+ 		 <legend> Internship Programme Details </legend>
+    <div class="row">
+      <div class="col25">
+        <label for="programme"><h2>Programme</h2> </label>
+      </div>
+      <div class="col75">
+        <select id="programme" name="programme">
+		  <option value="0">Please select a programme</option>
+          <option value="1">Data Science</option>
+          <option value="2">Web Application</option>
+        </select>
+      </div>
+    </div>
+	<div class="row">
+      <div class="col25">
+        <label for="level"><h2>Level</h2> </label><br>
+      </div>
+      <div class="col75">
+        <h2>1 <input type="radio" name="level" value="1">  </input><br></h2>
+		<h2>2 <input type="radio" name="level" value="2">  </input><br></h2>
+        <h2>3 <input type="radio" name="level" value="3">  </input><br></h2>
+		
+      </div>
+    </div>
+	</fieldset>
+	<fieldset> 
+ 		 <legend> Training Rating </legend>
+    <div class="row">
+      <div class="col25">
+        <label for="webcontent"><h2>Overall rating</h2></h2></label>
+      </div>
+      <div class="col75">
+        <input type="number" name="rating" id="rating" min="1" max="10" step="0.5">
+      </div>
+    </div>
+	<br/>
+    <div class="row">
+      <div class="col75">
+        <label for="comment"><h2>Any other comment(s)</h2></label>
+      </div>
+      <div class="col75">
+        <textarea id="comments" name="comments" placeholder="Enter any other relevant comments" style="height:100px;width:600px"></textarea>
+      </div>
+    </div>
+
+    
+        
+            
+  <!--  <div class="col25">
+        <label class="control-label"><h4>Upload Internship Project Report</h4></label>
+    </div>
+    
+    <div>
+        <input type="file" name="file" id="file" class="filestyle" data-buttonText="Select a File">
+    </div>
+    </fieldset>
+	<br>
+	<div class="row">
+      <input type="checkbox" name="chkAgree" id="chkAgree"> <strong> </strong> </input>
+    </div>
+	<br>//-->
+
+    <div class="row">
+      <centre><input type="submit" value="Submit Form">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Reset Form"></centre>
+    </div>
+  </form>
+</div>
+</form>
+</body>
+</html>

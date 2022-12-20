@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="index.html"><strong>TATA</strong> STEEL</a>
+      </div>
+      
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title" id="li1">Welcome</div>
+    <div class="sub_title">....</div>
+    <div class="btns">
+      
+      <a href='sign.html'>
+        <button>User</button></a>
+
+        <a href='#'>
+            <button>Admin</button></a>  
+            
+         
+      
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  var div = document.getElementById("li1");
+  
+  function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++ ) {
+          color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+  }
+  
+  function changeColor(){
+      div.style.color= getRandomColor();
+  }
+  
+  setInterval(changeColor,1000);
+</script>
